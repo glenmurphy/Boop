@@ -210,27 +210,7 @@ public class Winput
                 dwExtraInfo = GetMessageExtraInfo()
             };
         }
-        
+
         SendKeyboardInput(inputs);
-    }
-
-    public static KeyboardInput GetKeyboardInputVK(VK vkCode, bool isDown)
-    {
-        return new KeyboardInput
-        {
-            wVk = (ushort)vkCode,
-            dwFlags = (uint) (isDown ? 0 : KeyEventF.KeyUp),
-            dwExtraInfo = GetMessageExtraInfo()
-        };
-    }
-
-    public static KeyboardInput GetKeyboardInput(ushort scanCode, bool isDown)
-    {
-        return new KeyboardInput
-        {
-            wScan = scanCode,
-            dwFlags = (uint)((isDown ? 0 : KeyEventF.KeyUp) | KeyEventF.Scancode),
-            dwExtraInfo = GetMessageExtraInfo()
-        };
     }
 }
