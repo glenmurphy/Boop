@@ -67,12 +67,15 @@ public class Winput
     }
 
     // https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+    // TODO: investigate using https://docs.microsoft.com/en-us/dotnet/api/system.windows.input.keyinterop.virtualkeyfromkey?view=net-5.0 instead
     [Flags]
     public enum VK
     {
         TAB = 0x09,
         SHIFT = 0x10,
         CONTROL = 0x11,
+        PRIOR = 0x21,
+        NEXT = 0x22,
         D = 0x44,
         LSHIFT = 0xA0,
         RSHIFT = 0xA1,
@@ -148,18 +151,6 @@ public class Winput
 
         SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(Input)));
     }
-
-    /*
-    public static void ClickKey(ushort scanCode)
-    {
-        var inputs = new KeyboardInput[]
-        {
-            GetKeyboardInput(scanCode, true),
-            GetKeyboardInput(scanCode, false)
-        };
-        SendKeyboardInput(inputs);
-    }
-    */
 
     public static void SendMouseInput(MouseInput[] mInputs)
     {

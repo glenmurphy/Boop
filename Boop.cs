@@ -46,11 +46,12 @@ public class Fingers
     }
     else if (b == LoopButton.DOWN && pressed)
     {
-      Winput.ScrollMouse(-ScrollAmount);
+      //Winput.ScrollMouse(-ScrollAmount);
+      Winput.SendKeyCombo(new Winput.VK[] {Winput.VK.NEXT});
     }
     else if (b == LoopButton.UP && pressed)
     {
-      Winput.ScrollMouse(ScrollAmount);
+      Winput.SendKeyCombo(new Winput.VK[] {Winput.VK.PRIOR});
     }
   }
 
