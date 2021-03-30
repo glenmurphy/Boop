@@ -1,5 +1,5 @@
 # Boop
-Uses the North Loop to send key events to Windows; default setup is for Chrome/Google Meet:
+Uses a bluetooth ring to send key events to Windows; default setup is for Chrome/Google Meet:
 - fwd/back cycle tabs
 - up/down scrolls
 - center press sends Ctrl+D (Mute in Hangouts Meet)

@@ -2,7 +2,7 @@
 
 public class Fingers
 {
-  private static int ScrollAmount = 425;
+  //private static int ScrollAmount = 425;
 
   bool useRightHand = false;
 
@@ -14,11 +14,11 @@ public class Fingers
     Console.ReadLine();
   }
 
-  public void HandleLoopEvent(LoopButton b, Boolean pressed)
+  public void HandleLoopEvent(LoopButton b, Boolean pressed, ulong addr)
   {
     Console.WriteLine("{0} {1}", b, pressed ? "pressed" : "released");
-    LoopButton fwdButton = (useRightHand ? LoopButton.FWD : LoopButton.BACK);
-    LoopButton backButton = (useRightHand ? LoopButton.BACK : LoopButton.FWD);
+    LoopButton fwdButton = (useRightHand ? LoopButton.BACK : LoopButton.FWD);
+    LoopButton backButton = (useRightHand ? LoopButton.FWD : LoopButton.BACK);
 
     if (b == LoopButton.CENTER && pressed)
     {
